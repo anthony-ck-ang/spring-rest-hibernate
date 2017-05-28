@@ -15,8 +15,8 @@ public class CustomerController {
 	CustomerRepository customerRepository;
 	
 	@Autowired
-	public CustomerController(CustomerRepository authorRepository){
-		this.customerRepository = authorRepository;
+	public CustomerController(CustomerRepository customerRepository){
+		this.customerRepository = customerRepository;
 	}
 
 	@RequestMapping("/")

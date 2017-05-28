@@ -27,8 +27,8 @@ public class TransactionController {
 	private TransactionService transactionService;
 	
 	@Autowired
-	public TransactionController(TransactionService postService){
-		this.transactionService = postService;
+	public TransactionController(TransactionService transactionService){
+		this.transactionService = transactionService;
 	}
 	
 	@RequestMapping( value = "/", method = RequestMethod.GET )
