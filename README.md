@@ -7,8 +7,9 @@ Technologies used:
 1. Spring boot (deployment)
 2. Spring data JPA
 3. Hibernate (ORM / data query & retrieval)
-4. Maven (Building)
-5. Java
+4. H2-in-memory database
+5. Maven (Building)
+6. Java
 
 # Note
 Please use a restful client to test this application.
