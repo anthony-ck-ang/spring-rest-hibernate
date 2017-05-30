@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.anthonyang.domain.Transaction;
-import com.anthonyang.exception.PostNotFoundException;
+import com.anthonyang.exception.TransactionNotFoundException;
 import com.anthonyang.service.TransactionService;
 
 @RestController
@@ -42,10 +42,10 @@ public class TransactionController {
 	}
 	
 	@RequestMapping( value = "/{id}", method = RequestMethod.GET )
-	public Transaction read(@PathVariable(value="id") long id) throws PostNotFoundException {
+	public Transaction read(@PathVariable(value="id") long id) throws TransactionNotFoundException {
 		Transaction post = transactionService.read(id);
 		if( post == null ){
-			throw new PostNotFoundException("Transaction with id: " + id + " not found.");
+			throw new TransactionNotFoundException("Transaction with id: " + id + " not found.");
 		}
 		return post;
 	}
@@ -60,8 +60,8 @@ public class TransactionController {
 		transactionService.delete(id);
 	}	
 	
-	@ExceptionHandler(PostNotFoundException.class)
-	public void handlePostNotFound(PostNotFoundException exception, HttpServletResponse response) throws IOException{
+	@ExceptionHandler(TransactionNotFoundException.class)
+	public void handlePostNotFound(TransactionNotFoundException exception, HttpServletResponse response) throws IOException{
 		response.sendError( HttpStatus.NOT_FOUND.value(), exception.getMessage() );
 	}
 }

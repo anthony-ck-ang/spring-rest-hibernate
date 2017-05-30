@@ -1,10 +1,10 @@
 package com.anthonyang.exception;
 
-public class PostNotFoundException extends RuntimeException {
+public class TransactionNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = -1226439803994500725L;
 
-	public PostNotFoundException(String msg){
+	public TransactionNotFoundException(String msg){
 		super(msg);
 	}
 	

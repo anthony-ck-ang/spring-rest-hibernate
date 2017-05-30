@@ -56,7 +56,7 @@ public class RestErrorHandlingApplication {
 	    	t3.setTeaser("something");
 	    	t3.setBody("something");
 	    	t3.setPostedOn(new Date());
-	    	t3.setCustomer(dv);
+	    	t3.setCustomer(cv);
 	    	transactionRepository.save(t3);
 	    	
     	};
